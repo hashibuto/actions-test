@@ -17,4 +17,4 @@ jobs:
       with:
         fetch-depth: 0
     - id: check-changes
-      uses: hashibuto/actions/change-matrix
+      uses: hashibuto/actions/change-matrix@master
