@@ -9,7 +9,6 @@ jobs:
   find-changed-dirs:
     runs-on: ubuntu-22.04
     name: generate-changed-dir-matrix
-    description: generate a matrix of changed directories
     outputs:
       directories: ${{ steps.check-changes.outputs.directories }}
     steps:
