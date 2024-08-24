@@ -17,3 +17,5 @@ jobs:
         fetch-depth: 0
     - id: check-changes
       uses: hashibuto/actions/change-matrix@master
+      with:
+        exclude: .git*
