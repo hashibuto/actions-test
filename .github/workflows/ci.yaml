@@ -19,3 +19,4 @@ jobs:
       uses: hashibuto/actions/change-matrix@master
       with:
         exclude: .git*
+        mustContain: VERSION
