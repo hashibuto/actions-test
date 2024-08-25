@@ -30,4 +30,4 @@ jobs:
         item: ${{ fromJson(needs.find-changed-dirs.outputs.directories) }}
     steps:
     - name: display info
-      run: echo ${{ matrix.directory.name }}
+      run: echo ${{ matrix.item.name }}
