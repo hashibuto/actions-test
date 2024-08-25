@@ -20,3 +20,14 @@ jobs:
       with:
         exclude: .git*
         must-contain: VERSION
+
+  publish:
+    needs: find-changed-dirs
+    runs-on: ubuntu-22.04
+    if: needs.find-changed-dirs.outputs.directories != '[]'
+    strategy:
+      matrix:
+        item: ${{ fromJson(needs.find-changed-dirs.outputs.directories) }}
+    steps:
+    - name: display info
+      run: echo ${{ matrix.directory.name }}
