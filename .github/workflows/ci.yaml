@@ -58,4 +58,11 @@ jobs:
       with:
         create-version-tag: 'true'
         create-major-version-tag: 'true'
-        main-branch: 'master'
+
+  update-base-tag:
+    needs: publish
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: hashibuto/actions/tagger@master
+      with:
+        update-base-tag: 'true'
