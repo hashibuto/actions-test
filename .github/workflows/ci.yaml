@@ -29,6 +29,10 @@ jobs:
       matrix:
         item: ${{ fromJson(needs.find-changed-dirs.outputs.directories) }}
     steps:
+    - uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+
     - name: display info
       run: |
         echo ${{ matrix.item.name }}
