@@ -58,7 +58,6 @@ jobs:
       with:
         create-version-tag: 'true'
         create-major-version-tag: 'true'
-        main-branch: 'master'
 
   update-base-tag:
     needs: publish
@@ -67,4 +66,3 @@ jobs:
     - uses: hashibuto/actions/tagger@master
       with:
         update-base-tag: 'true'
-        main-branch: 'master'
