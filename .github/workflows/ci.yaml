@@ -58,3 +58,4 @@ jobs:
       with:
         create-version-tag: 'true'
         create-major-version-tag: 'true'
+        main-branch: 'master'
