@@ -44,6 +44,7 @@ jobs:
       with:
         working-directory: ${{ matrix.item.path }}
         filename: VERSION
+        tag-prefix: "${{ matrix.item.name }}-"
 
     - name: display versions
       run: |
@@ -51,3 +52,5 @@ jobs:
         echo ${{ env.VERSION_COMMIT }}
         echo ${{ env.VERSION_BRANCH }}
         echo ${{ env.VERSION_TIMESTAMP }}
+        echo ${{ env.VERSION_TAG }}
+        echo ${{ env.VERSION_TAG_MAJOR }}
