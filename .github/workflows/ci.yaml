@@ -30,4 +30,20 @@ jobs:
         item: ${{ fromJson(needs.find-changed-dirs.outputs.directories) }}
     steps:
     - name: display info
-      run: echo ${{ matrix.item.name }}
+      run: |
+        echo ${{ matrix.item.name }}
+        echo ${{ matrix.item.path }}
+
+    - name: get version
+      id: version
+      uses: hashibuto/actions/version@master
+      with:
+        working-directory: ${{ matrix.item.path }}
+        filename: VERSION
+
+    - name: display versions
+      run: |
+        echo ${{ env.VERSION }}
+        echo ${{ env.VERSION_COMMIT }}
+        echo ${{ env.VERSION_BRANCH }}
+        echo ${{ env.VERSION_TIMESTAMP }}
