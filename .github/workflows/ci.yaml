@@ -61,7 +61,10 @@ jobs:
         main-branch: 'master'
 
   update-base-tag:
-  - uses: hashibuto/actions/tagger@master
-    with:
-      update-base-tag: 'true'
-      main-branch: 'master'
+    needs: publish
+    runs-on: ubuntu-22.04
+    steps:
+    - uses: hashibuto/actions/tagger@master
+      with:
+        update-base-tag: 'true'
+        main-branch: 'master'
